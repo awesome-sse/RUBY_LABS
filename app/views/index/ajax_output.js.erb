@@ -1,0 +1,47 @@
+var res = `
+
+<div id="result_output">
+    <div class="container">
+        <div class="row">
+            <div class="col-5">
+
+                <% if not @result.nil? %>
+                    <% if not @longest_one.nil? %>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Отрезки</th>
+                                    <th scope="col">Индексы</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            
+                                <% @result.each_with_index do |r, i| %>
+                                    <tr>
+                                        <th scope="row"> <%= i+1 %>  </th>
+                                        <td> <p> <%= r[0] %> </p> </td>
+                                        <td> <p> <%= r[1] %> </p> </td>
+                                    </tr>
+                                <% end %>
+                                
+                            </tbody>
+                        </table>  
+
+                        <p> <%= @longest_one[0] %> :: <%= @longest_one[1] %> </p>
+
+                    <% else %>
+                        <p> Отрезков не нашлось... </p>
+                    <% end %>
+
+                <% else %>
+                    <p> <%= @error %>  </p>
+                <% end %>  
+
+            </div>
+        </div>
+    </div>
+</div>
+`;
+
+document.querySelector('#result').innerHTML = res;
