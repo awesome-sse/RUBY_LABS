@@ -1,0 +1,4 @@
+.row{display:table-row; background: rgba(198, 218, 212, 0.4);}
+.caption{display:table-caption; background: #40ad71; text-align: center; color: white; font-size: 1.4em;}
+.col{display:table-cell; padding: 5px; border: 1px solid #000000;}
+.timeanddisp{background: #88e0b0; text-align: center; color: white; font-size: 1.2em}
