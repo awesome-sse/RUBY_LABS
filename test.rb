@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'minitest/autorun'
 require_relative 'functions'
 
@@ -11,17 +13,17 @@ def real_correction(str)
   kol = 0
   ans = ''
   str.each_char.map do |ch|
-    if ch.eql?(' ') 
+    if ch.eql?(' ')
       newword = true
       ans += ' '
-    elsif newword and /[0-9]/.match(ch)
+    elsif newword && /[0-9]/.match(ch)
       newword = false
       ans += '_'
       kol += 1
     elsif /[a-zA-Z0-9]/.match(ch)
       ans += ch
       newword = false
-    else 
+    else
       newword = false
       kol += 1
     end

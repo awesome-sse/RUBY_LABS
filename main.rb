@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require_relative 'functions'
 
-puts("Enter x:")
+puts('Enter x:')
 x = gets.to_f
 puts calc_y(x)
 
