@@ -1,16 +1,86 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <link href = "1.css" rel = "stylesheet">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Examples</title>
+    <meta name='viewport' content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no'/>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <style>
+        .fontplus {
+            font-size: 1.4em;
+        }
+    </style>
+
+    <script>
+        let P = document.createElement("div");
+
+        function generateTree(elem, lev) {
+            console.log(elem.tagName);
+            PP = document.createElement("h2");
+            PP.innerHTML = '&nbsp'.repeat(lev * 4) + elem.tagName;
+            P.appendChild(PP);
+            let child = elem.firstElementChild;
+            while (child) {
+                generateTree(child, lev + 1);
+                child = child.nextElementSibling;
+            }
+        }
+
+        function Answer() {
+            generateTree(document.documentElement, 0);
+            res = document.getElementById("result");
+            res.appendChild(P);
+        }
+    </script>
+
 </head>
-
 <body>
+    <div class = "container">
+        <div class="row">
+            <span style = "background-color: aquamarine; font-size: 2em; text-align: center;">Рецепт куриного супа</span>
+        </div>
+        <div class="row">
+            <div class="col-4 fontplus">
+                Ингридиенты
+            </div>
+            <div class="col-4 fontplus">
+                Рецепт
+            </div>
+            <div class="col-4 fontplus">
+                Результат
+            </div>
+        </div>
 
-<h1>Как найти математическое ожидание?</h1>
-<div> <em>Математическое ожидание</em> случайной величины X <span id = "black_color">(обозначается M(X) или реже E(X))</span> характеризует среднее значение случайной величины (дискретной или непрерывной). Мат. ожидание - это первый начальный момент заданной СВ. </div>
-<div id="arial"> Математическое ожидание относят к так называемым характеристикам положения распределения (к которым также принaдлежат мода и медиана). 
-    <div class = "description">Эта характеристика описывает некое усредненное положение случайной величины на числовой оси.</div>
-    Скажем, если матожидание случайной величины - срока службы лампы, равно 100 часов, то считается, 
-    что значения срока службы сосредоточены (с обеих сторон) от этого значения (с тем или иным разбросом, о котором уже говорит дисперсия).</div>
+        <div class="row">
+            <div class="col-4">
+                <ul>
+                    <li>500г курицы</li>
+                    <li>3л воды</li>
+                    <li>100г лука</li>
+                    <li>80г моркови</li>
+                    <li>150г картофеля</li>
+                    <li>4 столовые ложки вермишели</li>
+                </ul>
+            </div>
+            <div class="col-4" id = "l">
+                <ol>
+                    <li>Вскипятить воду</li>
+                    <li>Положить курицу и варить 40 минут</li>
+                    <li>Жарим лук и морковь до золотистого цвета</li>
+                    <li>По готовности курицы кладём картофель и варим 20 минут</li>
+                    <li>За 5 минут до готовности картофеля закидываем поджарку и вермишель</li>
+                    <li>Отсавляем суп настаиваться 15 минут</li>
+                </ol>
+            </div>
+            <div class="col-4">
+                <img src="1.png" alt="SOUP" width="300" height="200">
+            </div>
+        </div>
+    </div>
+    <div id = "result"></div>
+    <input type="button" onclick="Answer()" value="Обход страницы">
+</body>
 </html>
