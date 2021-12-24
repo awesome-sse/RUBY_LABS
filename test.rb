@@ -6,19 +6,27 @@ def real_y(x)
 end
 
 def real_correction(str)
+  str.force_encoding('UTF-8')
+  newword = true
   kol = 0
-  words = str.split(' ')
-  (0..words.length - 1).each do |i|
-    if /[^[a-zA-Z0-9]]/.match(words[i])
-      words[i] = ''
+  ans = ''
+  str.each_char.map do |ch|
+    if ch.eql?(' ') 
+      newword = true
+      ans += ' '
+    elsif newword and /[0-9]/.match(ch)
+      newword = false
+      ans += '_'
       kol += 1
-    elsif /[a-zA-Z]/.match(words[i]) and /[0-9]/.match(words[i][0])
-      words[i][0] = '_'
+    elsif /[a-zA-Z0-9]/.match(ch)
+      ans += ch
+      newword = false
+    else 
+      newword = false
       kol += 1
     end
   end
-  str = words.join(' ')
-  [str, kol]
+  [ans, kol]
 end
 
 class TestRobot < Minitest::Test
