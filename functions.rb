@@ -5,7 +5,6 @@ def calc_y(x)
 end
 
 def correction_str(str)
-  str.force_encoding('UTF-8')
   newword = true
   kol = 0
   ans = ''
