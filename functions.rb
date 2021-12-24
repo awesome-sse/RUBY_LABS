@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def definite_integral(n)
   ans = 0.0
   start_ = Math::PI / 4
@@ -31,45 +33,9 @@ def definite_integral_advanced(n)
     end
   end
 
-  e.take(n).last
+  e.take(n - 1).last
 end
 
-def calculate_error_for_integral(val)
-  (val - (Math.sqrt(3) - Math::PI / 12 - 1)).abs
-end
-
-def minmax(f_x, a, b)
-  max_val = f_x.call(a)
-  max_i = a
-  min_val = f_x.call(b)
-  min_i = a
-  (a..b).step(0.01).each do |x|
-    if f_x.call(x) > max_val
-      max_val = f_x.call(x)
-      max_i = x
-    end
-    if f_x.call(x) < min_val
-      min_val = f_x.call(x)
-      min_i = x
-    end
-  end
-  [min_i, max_i]
-end
-
-def minmax_block(a, b)
-  max_val = (yield a)
-  max_i = a
-  min_val = (yield a)
-  min_i = a
-  (a..b).step(0.01).each do |x|
-    if (yield x) > max_val
-      max_val = (yield x)
-      max_i = x
-    end
-    if (yield x) < min_val
-      min_val = (yield x)
-      min_i = x
-    end
-  end
-  [min_i, max_i]
+def minmax_block
+  yield if block_given?
 end
