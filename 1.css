@@ -1,34 +1,20 @@
-html {
-    width: 65%;
-    padding: 20px;
-    box-shadow: 3px 3px 7px;
-    margin: 30px;
-}
-
 h1 {
-    color : red;
+    font-size: 300px;
+    line-height: 3; 
+    text-align: center; 
+}
+h3 { 
+    color: #111;
+    font-family: 'Open Sans', sans-serif; 
+    font-size: 30px; 
+    font-weight: 300;
+    line-height: 32px; 
+    margin: 0 0 72px; 
+    text-align: center; 
+    background-color: rgb(32, 238, 228);
 }
 
-em {
-    margin: 10px;
-    padding: 4px;
-    font-size: 2em;
+#td_cost:hover {
+    background-color: #0a20e9;
+    color: white;
 }
-
-#arial {
-    font-family: Arial;
-}
-
-.description {
-    font-size: 1.4em;
-    display: block;
-    margin: 5px 0px;
-    border-bottom: 2px solid rgb(0, 0, 0);
-    border-top: 2px solid rgb(0, 0, 0);
-}
-
-#black_color {
-    color: black;
-    font-weight: 900;
-}
-

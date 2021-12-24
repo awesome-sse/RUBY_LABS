@@ -1,16 +1,73 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <link href = "1.css" rel = "stylesheet">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Examples</title>
+    <meta name='viewport' content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no'/>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="1.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script type = text/javascript src ="1.js"></script>
 </head>
-
 <body>
-
-<h1>Как найти математическое ожидание?</h1>
-<div> <em>Математическое ожидание</em> случайной величины X <span id = "black_color">(обозначается M(X) или реже E(X))</span> характеризует среднее значение случайной величины (дискретной или непрерывной). Мат. ожидание - это первый начальный момент заданной СВ. </div>
-<div id="arial"> Математическое ожидание относят к так называемым характеристикам положения распределения (к которым также принaдлежат мода и медиана). 
-    <div class = "description">Эта характеристика описывает некое усредненное положение случайной величины на числовой оси.</div>
-    Скажем, если матожидание случайной величины - срока службы лампы, равно 100 часов, то считается, 
-    что значения срока службы сосредоточены (с обеих сторон) от этого значения (с тем или иным разбросом, о котором уже говорит дисперсия).</div>
+    <h1>Интернет - магазин</h1>
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-4">
+            <h3>Товары</h3>
+            <form>
+                <div class="row">
+                    <label class = "col-2 col-form-label" for="staticEmail"><p>Товар</p></label>
+                    <div class="col-10"> 
+                        <input type="input" class="form-control" id="inputName" placeholder="">
+                    </div>
+                </div>
+                <div class="row">
+                    <label class = "col-2 col-form-label" for="inputPassword"><p>Стоимость</p></label>
+                    <div class="col-10"> 
+                        <input type="input" class="form-control" id="inputCost" placeholder="" onkeypress="if(this.value.match(/\D/)) this.value=this.value.replace(/\D/g,'')"
+                        onkeyup="if(this.value.match(/\D/)) this.value=this.value.replace(/\D/g,'')">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col"></div>
+                        <div class="col">
+                            <button type="button" class="" onclick="add()">Добавить в Корзину</button>
+                        </div>
+                    <div class="col"></div>    
+                </div>
+            </form>
+        </div>
+        <div class="col-3">
+            <h3>Корзина</h3>
+                <table class="table">
+                    <thead >
+                      <tr>
+                        <th>№</th>
+                        <th>Товар</th>
+                        <th>Стоимость</th>
+                      </tr>
+                    </thead>
+                    <tbody id="basket"></tbody>
+                </table>
+        </div>
+        <div class="col-3">
+            <h3>Итог</h3>
+            <div class="column">
+                <div class="row">
+                    <div class="col-3">
+                        <button type="button" class="" onclick="cost()">Вывести</button>
+                    </div>
+                    <div class="col-1"></div>
+                    <div class="col-8">
+                        <input class="form-control" type="text" placeholder="Общая стоимость" readonly id="cost_output">
+                    </div>  
+                </div>
+            </div>
+        </div>
+        <div class="col-1"></div>
+    </div>
+</body>
 </html>
